@@ -107,6 +107,8 @@ class LogBot(irc.IRCClient):
                 self.msg(self.chn, msg)
             else:
                 self.msg(self.chn, "No one is in queue.")
+        if msg == 'book' and user_cond:
+            self.msg(self.chn, "http://pymbook.readthedocs.org/en/py3/")
         if msg == 'masters' and user_cond:
             self.msg(self.chn, "My current masters are: %s" % ",".join(self.channel_admin))
         if msg.startswith('add:') and user_cond:
